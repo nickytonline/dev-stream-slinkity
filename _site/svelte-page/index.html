@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="img/png" href="/images/favicon.png"/>
+    <meta name="description" content="To eleventy and beyond!"/>
+    <meta property="og:image" content="/images/og-image-banner.jpg"/>
+    <meta property="og:image:width" content="1200"/>
+    <meta property="og:image:height" content="630"/>
+    <meta property="og:site_name" content="Slinkity"/>
+    <meta property="og:title"/>
+    <meta property="og:description" content="To eleventy and beyond!"/>
+    <link
+      rel="preload"
+      href="/fonts/Atkinson/Atkinson-Hyperlegible-Regular.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin="anonymous">
+    <link
+      rel="preload"
+      href="/fonts/Atkinson/Atkinson-Hyperlegible-Bold.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin="anonymous">
+    <link
+      rel="preload"
+      href="/fonts/Atkinson/Atkinson-Hyperlegible-Italic.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin="anonymous">
+    <link
+      rel="preload"
+      href="/fonts/Atkinson/Atkinson-Hyperlegible-BoldItalic.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin="anonymous">
+     <style>.counter-example.svelte-vgz6vc{display:flex;align-items:center;gap:1rem}.counter-example-button.svelte-vgz6vc{border:1px solid var(--pink);border-radius:0.5rem;padding:0.2rem 0.6rem;font-weight:700}</style>
+    <title>Seriously Svelte</title>
+    <script type="module" crossorigin src="/assets/index.2e045df2.js"></script>
+    <link rel="modulepreload" href="/assets/eagerLoader.b4c3b78a.js">
+    <link rel="modulepreload" href="/assets/client.7da81969.js">
+    <link rel="stylesheet" href="/assets/index.e2064715.css">
+    <link rel="stylesheet" href="/assets/index.a03db713.css">
+  </head>
+  <body>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/react-page">React</a>
+      <a href="/vue-page">Vue</a>
+      <a href="/svelte-page">Svelte</a>
+      <a href="/deployment">Deployment</a>
+    </nav>
+    <main>
+      <h1>Seriously Svelte</h1>
+      <details>
+        <summary>☝️ Who generated that heading?</summary>
+        <p>
+          That heading came from a wrapper layout. If you check out this page's source (<code>svelte-page</code>), you'll notice some frontmatter applied between those
+          <code>
+            ---
+          </code>
+          blocks:
+        </p>
+        <dl>
+          <dt>title:</dt>
+          <dd>The title we'll apply as the page heading and the browser tab title. You'll see this applied using
+            <code>{`Seriously Svelte`}</code>
+            in the layout file described below 👇</dd>
+          <dt>layout:</dt>
+          <dd>The name of the layout file to apply. In this case,
+            <code>layout: layout</code>
+            translates to
+            <code>_includes/layout.njk</code>
+            since 11ty looks in the _includes folder by default.</dd>
+        </dl>
+        <p>You'll notice this page is wrapped in a layout. This pulls in a few parameters using
+          <a href="https://www.11ty.dev/docs/data-cascade/">11ty's data cascade:</a>
+        </p>
+        <ul>
+          <li>
+            <code>title
+            </code>
+            uses the "title" attribute from our page's front matter.</li>
+          <li>
+            <code>content | safe
+            </code>
+            renders our page.</li>
+        </ul>
+      </details>
+      <slinkity-react-mount-point data-s-id="0"><p>To create the page you see here, we placed a
+  <code>svelte-page.svelte</code> file alongside the other pages on our site.
+  That&#39;s because component pages are like any other template on your 11ty site,
+  just with 1 extra superpower:
+  <strong>you can hydrate the page with JavaScript.</strong></p>
+
+<h2>Hydrating this page</h2>
+
+<p>We opted-in to shipping JavaScript using the <code>hydrate</code> key in our
+  <code>frontMatter</code>. Learn more on
+  <a href="https://slinkity.dev/docs/partial-hydration/">our partial hydration docs.</a></p>
+
+<p>Tip: try setting <code>hydrate</code> to <code>&quot;none&quot;</code>, or removing the
+  key entirely. The counter below should stop working! This is because we&#39;re no
+  longer sending our component to the client, effectively turning Svelte into
+  just another templating language.
+</p>
+<p class="counter-example svelte-vgz6vc"><span>Count: 0</span>
+  <button class="counter-example-button svelte-vgz6vc">+ 1</button></p>
+
+<h2>Front matter</h2>
+
+<p>Our included <code>frontMatter</code> wires up the layout and passes
+  information &quot;upstream&quot; for other templates to read from. It works the same way
+  for component-based pages as it does for
+  <a href="https://www.11ty.dev/docs/data-frontmatter/">11ty&#39;s front matter</a>.
+  Here, the <code>title</code> key is accessible from any layout templates applied
+  to our page.
+</p></slinkity-react-mount-point>
+
+    </main>
+  </body>
+</html>
